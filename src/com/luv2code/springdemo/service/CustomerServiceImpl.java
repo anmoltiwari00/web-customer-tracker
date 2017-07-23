@@ -21,7 +21,8 @@ public class CustomerServiceImpl implements CustomerService {
 		List<Customer> theCustomers = customerDAO.getCustomers();
 		return theCustomers;
 	}
-
+	
+	//The service layer handles the transactions....
 	@Transactional
 	public void saveCustomers(Customer theCustomer) {
 		customerDAO.saveCustomers(theCustomer);
