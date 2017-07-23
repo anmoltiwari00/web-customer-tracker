@@ -37,6 +37,7 @@ public class CustomerController {
 		return "showInputForm";
 	}
 	
+	//customer is the handler used to pass data....
 	@RequestMapping("/saveCustomer")
 	public String saveCustomer(@ModelAttribute("customer") Customer theCustomer){
 		customerService.saveCustomers(theCustomer);
