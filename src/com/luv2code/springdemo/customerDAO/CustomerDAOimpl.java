@@ -22,7 +22,7 @@ public class CustomerDAOimpl implements CustomerDAO{
 	public List<Customer> getCustomers() {
 		Session session = sessionFactory.getCurrentSession();
 		
-		Query<Customer> theQuery = session.createQuery("from Customer",Customer.class);
+		Query<Customer> theQuery = session.createQuery("from Customer order by lastName",Customer.class);
 		
 		List<Customer> theCustomers = theQuery.getResultList();
 		
