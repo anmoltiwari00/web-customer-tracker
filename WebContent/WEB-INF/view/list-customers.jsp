@@ -31,21 +31,26 @@
 				<c:param name="customerId" value="${tempCustomer.id}"/>
 			</c:url>
 			
-			<c:url var="deleteCustomer" value="/customer/deletedCustomer">
-				<c:param name="customerdeleteId" value="${tempCustomer.id}"/>
+			<c:url var="deleteCustomer" value="/customer/deleteCustomer">
+				<c:param name="deleteId" value="${tempCustomer.id}"/>
 			</c:url>
 				<tr>
 					<td>${tempCustomer.firstName}</td>
 					<td>${tempCustomer.lastName}</td>
 					<td>${tempCustomer.email}</td>
 					<td><a href="${updateurl}">Update</a></td>
-					<td><a href="${deleteCustomer}">Delete</a></td>
+					<td><a  href="${deleteCustomer}" onclick="if(!(confirm('Are you sure want to delete this customer?'))) return false">Delete</a></td>
 				</tr>
 				
 			</c:forEach>
 		</table>
 	</div>
 </div>
+
+
+
+
+</script>
 
 </body>
 </html>
