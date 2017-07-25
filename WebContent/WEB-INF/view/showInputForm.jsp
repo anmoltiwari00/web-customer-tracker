@@ -13,19 +13,23 @@
 <body>
 
 <div id="head">
-	<h2>CRM....Add a new Customer</h2>
+	<h2>CRM....Add/update a Customer</h2>
 </div>
 
 	<form:form action="saveCustomer"  modelAttribute="customer" method="POST">
+	
+		<!-- To associate customer data with id -->
+		<form:hidden path="id" />
 		
-		<label for="firstName">First Name:</label>
-		<input type="text" name="firstName"/>
 		
-		<label for="lastName">Last Name:</label>
-		<input type="text" name="lastName"/>	
+		<label>First Name:</label>
+		<form:input path="firstName" type="text" name="firstName"/>
 		
-		<label for="email">Email:</label>
-		<input type="email" name="email"/>		
+		<label>Last Name:</label>
+		<form:input path="lastName" type="text" name="lastName"/>	
+		
+		<label>Email:</label>
+		<form:input path="email" type="email" name="email"/>		
 		
 		<input type="submit" value="Save" id="save"/>
 		

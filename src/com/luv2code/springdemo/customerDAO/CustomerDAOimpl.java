@@ -2,7 +2,6 @@ package com.luv2code.springdemo.customerDAO;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -35,8 +34,18 @@ public class CustomerDAOimpl implements CustomerDAO{
 		
 		Session session1 = sessionFactory.getCurrentSession();
 		
-		session1.save(theCustomer);
+		session1.saveOrUpdate(theCustomer);
 		
 	}
 
+	@Override
+	public Customer getCustomer(int theId) {
+		Session session2 = sessionFactory.getCurrentSession();
+		
+		Customer theCustomer = session2.get(Customer.class, theId);
+		
+		return theCustomer;
+	}
+
+	
 }
